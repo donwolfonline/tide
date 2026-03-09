@@ -1,0 +1,419 @@
+/* ============================================================
+   TIDE — Search Landing Page Styles
+   ============================================================ */
+
+/* --- Page Shell --- */
+.page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Navbar --- */
+.nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+}
+
+.navLinks {
+    display: flex;
+    gap: 4px;
+}
+
+.navLink {
+    font-size: 13px;
+    font-weight: 500;
+    color: #334155;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: background 0.18s ease, color 0.18s ease;
+}
+
+.navLink:hover {
+    background: rgba(42, 184, 214, 0.12);
+    color: #1a5f9c;
+}
+
+.navRight {
+    display: flex;
+    align-items: center;
+}
+
+.signInBtn {
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    color: #fff;
+    background: linear-gradient(135deg, #1a5f9c 0%, #2ab8d6 100%);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: opacity 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 2px 8px rgba(42, 184, 214, 0.35);
+}
+
+.signInBtn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(42, 184, 214, 0.45);
+}
+
+.signInBtn:active {
+    transform: translateY(0);
+}
+
+/* --- Main --- */
+.main {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px 60px;
+}
+
+/* --- Logo --- */
+.logoWrap {
+    margin-bottom: 14px;
+    animation: floatIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.logo {
+    width: clamp(200px, 40vw, 340px);
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 24px rgba(26, 95, 156, 0.18));
+}
+
+/* --- Tagline --- */
+.tagline {
+    font-size: 16px;
+    font-weight: 400;
+    color: #475569;
+    margin-bottom: 40px;
+    letter-spacing: 0.01em;
+    animation: fadeUp 0.7s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* --- Search Container --- */
+.searchContainer {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    animation: fadeUp 0.7s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* --- Search Box --- */
+.searchBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(226, 232, 240, 0.8);
+    border-radius: 50px;
+    padding: 12px 16px 12px 20px;
+    box-shadow: 0 4px 20px rgba(26, 95, 156, 0.10),
+        0 1px 4px rgba(0, 0, 0, 0.06);
+    transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.searchBoxFocused {
+    border-color: rgba(42, 184, 214, 0.6);
+    box-shadow: 0 6px 32px rgba(42, 184, 214, 0.20),
+        0 2px 8px rgba(0, 0, 0, 0.06),
+        0 0 0 3px rgba(42, 184, 214, 0.08);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.searchIcon {
+    width: 20px;
+    height: 20px;
+    color: #94a3b8;
+    flex-shrink: 0;
+    transition: color 0.2s;
+}
+
+.searchBoxFocused .searchIcon {
+    color: #2ab8d6;
+}
+
+.searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 17px;
+    font-family: inherit;
+    font-weight: 400;
+    color: #0f172a;
+    line-height: 1.4;
+    min-width: 0;
+}
+
+.searchInput::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.clearBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #94a3b8;
+    padding: 2px;
+    border-radius: 50%;
+    transition: color 0.18s, background 0.18s;
+    flex-shrink: 0;
+}
+
+.clearBtn:hover {
+    color: #475569;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.divider {
+    width: 1px;
+    height: 22px;
+    background: #e2e8f0;
+    flex-shrink: 0;
+}
+
+.voiceBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #2ab8d6;
+    padding: 4px;
+    border-radius: 50%;
+    transition: color 0.18s, background 0.18s, transform 0.18s;
+    flex-shrink: 0;
+}
+
+.voiceBtn:hover {
+    color: #1a5f9c;
+    background: rgba(42, 184, 214, 0.10);
+    transform: scale(1.1);
+}
+
+/* --- Suggestions Dropdown --- */
+.suggestions {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 16px 48px rgba(26, 95, 156, 0.14),
+        0 4px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    animation: dropIn 0.16s ease both;
+    z-index: 100;
+}
+
+.suggestion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #1e293b;
+    transition: background 0.12s ease;
+}
+
+.suggestion:hover,
+.suggestionActive {
+    background: rgba(42, 184, 214, 0.07);
+}
+
+.suggestionIcon {
+    width: 16px;
+    height: 16px;
+    color: #94a3b8;
+    flex-shrink: 0;
+}
+
+.suggestion span {
+    flex: 1;
+}
+
+.suggestion strong {
+    color: #1a5f9c;
+    font-weight: 600;
+}
+
+.suggestionArrow {
+    width: 14px;
+    height: 14px;
+    color: #cbd5e1;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 0.12s;
+}
+
+.suggestion:hover .suggestionArrow,
+.suggestionActive .suggestionArrow {
+    opacity: 1;
+    color: #2ab8d6;
+}
+
+/* --- CTA Buttons --- */
+.ctaRow {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 24px;
+    animation: fadeUp 0.7s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ctaBtn {
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 500;
+    color: #334155;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(226, 232, 240, 0.9);
+    border-radius: 8px;
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: background 0.18s, border-color 0.18s, box-shadow 0.18s, transform 0.18s, color 0.18s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.ctaBtn:hover {
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(42, 184, 214, 0.5);
+    color: #1a5f9c;
+    box-shadow: 0 4px 16px rgba(42, 184, 214, 0.15);
+    transform: translateY(-2px);
+}
+
+.ctaBtn:active {
+    transform: translateY(0);
+}
+
+/* --- Footer --- */
+.footer {
+    position: relative;
+    z-index: 10;
+    background: rgba(248, 250, 252, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(226, 232, 240, 0.8);
+    font-size: 13px;
+    color: #64748b;
+}
+
+.footerBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 24px;
+}
+
+.footerLeft,
+.footerRight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footerLink {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.16s ease;
+}
+
+.footerLink:hover {
+    color: #1a5f9c;
+}
+
+/* --- Animations --- */
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+    .nav {
+        padding: 12px 16px;
+    }
+
+    .navLink {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .searchInput {
+        font-size: 16px;
+    }
+
+    .footerBottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .footerLeft,
+    .footerRight {
+        gap: 16px;
+    }
+}
