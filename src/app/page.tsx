@@ -4,6 +4,13 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 
+interface AuthUser {
+    firstName: string;
+    lastName: string;
+    avatarColor: string;
+}
+
+
 const SUGGESTIONS = [
     "tide search engine",
     "tide ocean discovery",
@@ -23,6 +30,42 @@ export default function Home() {
     const [suggestions, setSuggestions] = useState<string[]>([]);
     const [selectedIndex, setSelectedIndex] = useState(-1);
     const inputRef = useRef<HTMLInputElement>(null);
+
+    const [authUser, setAuthUser] = useState<AuthUser | null>(null);
+    const [isAuthChecking, setIsAuthChecking] = useState(true);
+
+    // Read the shared localhost cookie to sync auth state
+    useEffect(() => {
+        const checkCookie = () => {
+            const match = document.cookie.match(new RegExp('(^| )tmail_session_v1=([^;]+)'));
+            if (match) {
+                try {
+                    const user = JSON.parse(decodeURIComponent(match[2]));
+                    setAuthUser(user);
+                } catch (e) {
+                    setAuthUser(null);
+                }
+            } else {
+                setAuthUser(null);
+            }
+            setIsAuthChecking(false);
+        };
+
+        checkCookie();
+
+        // Check on focus and visibility change
+        window.addEventListener("focus", checkCookie);
+        document.addEventListener("visibilitychange", checkCookie);
+
+        // Heartbeat check every 2 seconds
+        const interval = setInterval(checkCookie, 2000);
+
+        return () => {
+            window.removeEventListener("focus", checkCookie);
+            document.removeEventListener("visibilitychange", checkCookie);
+            clearInterval(interval);
+        };
+    }, []);
 
     // Filter suggestions
     useEffect(() => {
@@ -75,13 +118,24 @@ export default function Home() {
             {/* Nav */}
             <nav className={styles.nav}>
                 <div className={styles.navLinks}>
-                    <a href="#" className={styles.navLink}>Web</a>
+                    <a href="http://localhost:8081" className={styles.navLink}>Tmail</a>
                     <a href="#" className={styles.navLink}>Images</a>
                     <a href="#" className={styles.navLink}>News</a>
                     <a href="#" className={styles.navLink}>Maps</a>
                 </div>
                 <div className={styles.navRight}>
-                    <button className={styles.signInBtn}>Sign In</button>
+                    {isAuthChecking ? null : authUser ? (
+                        <div
+                            className={styles.avatar}
+                            style={{ backgroundColor: authUser.avatarColor }}
+                            title={`${authUser.firstName} ${authUser.lastName}`}
+                            onClick={() => window.open('http://localhost:8081', '_blank')}
+                        >
+                            {authUser.firstName.charAt(0)}{authUser.lastName.charAt(0)}
+                        </div>
+                    ) : (
+                        <a href="http://localhost:8081/SignIn" className={styles.signInBtn}>Sign In</a>
+                    )}
                 </div>
             </nav>
 

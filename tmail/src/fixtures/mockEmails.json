@@ -1,0 +1,117 @@
+[
+    {
+        "id": "msg_001",
+        "folder": "inbox",
+        "labels": [
+            "work",
+            "important"
+        ],
+        "sender": {
+            "name": "Tide Team",
+            "email": "welcome@tide.com",
+            "avatarUrl": "https://ui-avatars.com/api/?name=Tide+Team&background=F44336&color=fff"
+        },
+        "recipients": [
+            {
+                "type": "to",
+                "email": "frederick@tide.com"
+            }
+        ],
+        "subject": "Welcome to Tmail by Tide",
+        "snippet": "We are thrilled to have you on board. Here is a quick guide to get started...",
+        "body": "<p>We are thrilled to have you on board. Here is a quick guide to get started with your new high-performance inbox.</p><ul><li>Swipe right to archive</li><li>Swipe left to delete</li></ul>",
+        "timestamp": "2026-03-09T08:30:00Z",
+        "isRead": false,
+        "isStarred": true,
+        "attachments": []
+    },
+    {
+        "id": "msg_002",
+        "folder": "inbox",
+        "labels": [
+            "project-pumpkin"
+        ],
+        "sender": {
+            "name": "Alex Mercer",
+            "email": "alex.m@devnetwork.io",
+            "avatarUrl": "https://ui-avatars.com/api/?name=Alex+Mercer&background=4CAF50&color=fff"
+        },
+        "recipients": [
+            {
+                "type": "to",
+                "email": "frederick@tide.com"
+            }
+        ],
+        "subject": "Thoughts on the v0.2.0 Bytecode Release?",
+        "snippet": "Hey, I just reviewed the latest compiler updates you pushed. The performance gains are solid.",
+        "body": "<p>Hey,</p><p>I just reviewed the latest compiler updates you pushed. The performance gains are solid. Let's sync up later this week to discuss the VM architecture.</p>",
+        "timestamp": "2026-03-08T14:15:22Z",
+        "isRead": true,
+        "isStarred": false,
+        "attachments": [
+            {
+                "id": "att_001",
+                "filename": "benchmark_results.pdf",
+                "size": "245KB",
+                "type": "application/pdf",
+                "url": "https://mock-storage.tide.com/benchmark_results.pdf"
+            }
+        ]
+    },
+    {
+        "id": "msg_003",
+        "folder": "inbox",
+        "labels": [
+            "personal"
+        ],
+        "sender": {
+            "name": "Sarah Jenkins",
+            "email": "s.jenkins88@gmail.com",
+            "avatarUrl": "https://ui-avatars.com/api/?name=Sarah+Jenkins&background=9C27B0&color=fff"
+        },
+        "recipients": [
+            {
+                "type": "to",
+                "email": "frederick@tide.com"
+            }
+        ],
+        "subject": "Weekend Trip Itinerary",
+        "snippet": "Here are the flight details and hotel confirmation for this weekend. Let me know if...",
+        "body": "<p>Here are the flight details and hotel confirmation for this weekend. Let me know if you want to book that dinner reservation now or decide when we get there.</p>",
+        "timestamp": "2026-03-07T09:42:00Z",
+        "isRead": true,
+        "isStarred": false,
+        "attachments": []
+    },
+    {
+        "id": "msg_004",
+        "folder": "sent",
+        "labels": [],
+        "sender": {
+            "name": "Frederick",
+            "email": "frederick@tide.com",
+            "avatarUrl": "https://ui-avatars.com/api/?name=Frederick&background=0D8ABC&color=fff"
+        },
+        "recipients": [
+            {
+                "type": "to",
+                "email": "investors@seedfund.vc"
+            }
+        ],
+        "subject": "Tide Ecosystem Pitch Deck",
+        "snippet": "Attached is the latest pitch deck outlining the Tmail architecture and user acquisition strategy.",
+        "body": "<p>Attached is the latest pitch deck outlining the Tmail architecture and user acquisition strategy. Looking forward to our call.</p>",
+        "timestamp": "2026-03-06T16:20:00Z",
+        "isRead": true,
+        "isStarred": false,
+        "attachments": [
+            {
+                "id": "att_002",
+                "filename": "Tide_PitchDeck_v1.pdf",
+                "size": "4.2MB",
+                "type": "application/pdf",
+                "url": "https://mock-storage.tide.com/Tide_PitchDeck_v1.pdf"
+            }
+        ]
+    }
+]
