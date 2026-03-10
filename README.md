@@ -118,4 +118,4 @@ This project prioritizes **Visual Excellence**.
 
 ## 👨‍💻 Author
 
-Developed by the Antigravity Team.
+Developed by Frederick Dineen.
