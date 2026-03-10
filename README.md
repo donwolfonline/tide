@@ -71,6 +71,40 @@ npx expo start --web
 
 ---
 
+## 🚀 Deployment
+
+### 1. Deploying Tide (Next.js)
+
+The easiest way to deploy **Tide** is via [Vercel](https://vercel.com):
+
+- Push your code to GitHub.
+- Import the repository into Vercel.
+- Vercel will automatically detect Next.js and deploy.
+- **Note**: Ensure your `NEXT_PUBLIC_TMAIL_URL` environment variable points to your deployed Tmail instance.
+
+### 2. Deploying Tmail (Expo Web)
+
+For the web version of Tmail, you can deploy to **Vercel**, **Netlify**, or **GitHub Pages**:
+
+```bash
+# Build the production web bundle
+cd tmail
+npx expo export --platform web
+```
+
+- This generates a `dist` (or `web-build`) folder.
+- Upload this folder to your static hosting provider of choice.
+
+### ⚠️ Production Cookie Sync Note
+
+When moving from `localhost` to production domains (e.g., `tide.com` and `tmail.com`):
+
+1. Both apps must be on the same parent domain (e.g., `app.tide.com` and `mail.tide.com`).
+2. Update the `syncCookie` helper in `authStore.ts` to include `domain=.yourdomain.com; Secure; SameSite=None`.
+3. Update the `checkCookie` heartbeat in `page.tsx` to ensure it looks for the correctly scoped cookie.
+
+---
+
 ## 🎨 Design Philosophy
 
 This project prioritizes **Visual Excellence**.
